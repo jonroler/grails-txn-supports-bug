@@ -1,0 +1,6 @@
+public class TestController {
+  TestService testService
+
+  def index() {
+  }
+}

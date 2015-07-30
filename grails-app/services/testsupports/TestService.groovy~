@@ -1,0 +1,32 @@
+package testsupports
+
+import org.springframework.transaction.annotation.Transactional
+import org.springframework.transaction.annotation.Propagation
+
+import javax.sql.DataSource
+
+import groovy.sql.Sql
+
+public class TestService {
+  static transactional = false
+  DataSource dataSource
+
+  @Transactional(propagation=Propagation.SUPPORTS)
+  public void testMethod1() {
+    log.error("In testMethod1")
+    Sql sql = new Sql(dataSource)
+    sql.eachRow("select 1") {
+      log.error(it)
+    }
+
+  }
+
+  @Transactional(propagation=Propagation.REQUIRED)
+  public void testMethod2() {
+    log.error("In testMethod2")
+    Sql sql = new Sql(dataSource)
+    sql.eachRow("select 1") {
+      log.error(it)
+    }
+  }
+}
