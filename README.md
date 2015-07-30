@@ -15,6 +15,7 @@ Caused by: Already value [org.springframework.jdbc.datasource.ConnectionHolder@4
 
 and this stack trace:
 
+```
     Line | Method
 ->> 1142 | runWorker in java.util.concurrent.ThreadPoolExecutor
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -42,3 +43,4 @@ Caused by IllegalStateException: Already value [org.springframework.jdbc.datasou
 |    617 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
 ^    745 | run       in java.lang.Thread
 
+```
